@@ -1,5 +1,7 @@
 # Vefforritun 2, 2021, hópverkefni 1
 
+[Kynning í fyrirlestri](https://youtu.be/W0k01_KRE4I).
+
 Útbúa skal vefþjónustur fyrir veitingastað sem bíður upp á fyrir óauðkenndan notanda:
 
 * skoða matseðil
