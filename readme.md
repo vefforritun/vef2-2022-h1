@@ -159,7 +159,7 @@ Setja skal upp vefinn á Heroku tengt við GitHub með Heroku postgres settu upp
 
 Verkefnið skal unnið í hóp, helst með þremur einstaklingum. Hópar með tveim eða fjórum einstaklingum eru einnig í lagi, ekki er dregið úr kröfum fyrir færri í hóp en gerðar eru auknar kröfur ef fleiri en þrír einstaklingar eru í hóp.
 
-Hægt er að auglýsa eftir hóp á slack á rásinni #vef2-2022-hópur.
+Hægt er að auglýsa eftir hóp á slack á rásinni #vef2-2022-vantar-hóp.
 
 Hafið samband við kennara ef ekki tekst eða ekki er mögulegt að vinna í hóp.
 
