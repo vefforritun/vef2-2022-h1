@@ -120,6 +120,8 @@ Ef beðið er um einingu eða reynt að framkvæma aðgerð sem ekki er leyfi fy
 
 ### Karfa, vefþjónustur
 
+* `/cart`
+ * `POST` býr til körfu og skilar
 * `/cart/:cartid`
   * `GET` skilar körfu með `id` jafnt `:cartid` með öllum línum og reiknuðu heildarverði körfu
   * `POST` bætir vöru við í körfu, krefst fjölda og auðkennis á vöru
@@ -138,7 +140,7 @@ Ef beðið er um einingu eða reynt að framkvæma aðgerð sem ekki er leyfi fy
   * `GET` skilar pöntun með öllum línum, gildum pöntunar, stöðu pöntunar og reiknuðu heildarverði körfu
 * `/orders/:id/status`
   * `GET` skilar pöntun með stöðu pöntunar og lista af öllum stöðubreytingum hennar
-  * `PATCH` uppfærir stöðu pöntunar, aðeins ef notandi er stjórnandi
+  * `POST` uppfærir stöðu pöntunar, aðeins ef notandi er stjórnandi (var upprunalega `PATCH` en `POST` á frekar við)
 
 ### Notendur, vefþjónustur
 
@@ -264,4 +266,5 @@ Skil skulu innihalda:
 | Útgáfa | Breyting                                                                                         |
 |--------|--------------------------------------------------------------------------------------------------|
 | 0.1    | Fyrsta útgáfa                                                                                    |
-| 0.2    | Skilgreining á vefþjónsutum, mat, um tæki og tól, ekki krafa um tengitöflu fyrir flokka og vörur |
+| 0.2    | Skilgreining á vefþjónustum, mat, um tæki og tól, ekki krafa um tengitöflu fyrir flokka og vörur |
+| 0.3    | Bæta við `POST` `/cart` og `POST` `/orders/:id/status`                                           |
