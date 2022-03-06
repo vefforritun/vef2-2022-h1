@@ -213,7 +213,33 @@ Setja skal upp vefinn á Heroku tengt við GitHub með Heroku postgres settu upp
 
 ## Sýnilausn
 
-Í lok febrúar verður gefin út keyrandi sýnilausn sem hægt er að nota til að fá betri tilfinningu fyrir kröfum og útfærslu.
+Sýnilausn er keyrandi á:
+`https://vef2-2022-h1-synilausn.herokuapp.com/`
+
+Til að testa ws tengingu:
+
+* Logga sig inn sem admin og fá token
+  * `POST https://vef2-2022-h1-synilausn.herokuapp.com/users/login`
+  * `{ "username": "admin", "password": "1234567890" }`
+* Logga sig inn á WS fyrir admin
+  * `wss://vef2-2022-h1-synilausn.herokuapp.com/admin`
+  * Header `Authorization: Bearer <token>`
+  * Ath þarf að refactora þ.a. token sé sent í byrjun því [WS staðall styður ekki headers almennt](https://devcenter.heroku.com/articles/websocket-security#authentication-authorization)
+* Búa til körfu
+  * `POST https://vef2-2022-h1-synilausn.herokuapp.com/cart`
+* Bæta í körfu
+  * `POST https://vef2-2022-h1-synilausn.herokuapp.com/cart/<CART UID>`
+  * `{ "product": 5, "quantity": 1 }`
+* Búa til pöntun úr körfu
+  * `POST https://vef2-2022-h1-synilausn.herokuapp.com/orders`
+  * `{ "cart": "<CART UID>", "name": "test" }`
+* Sjá pöntun verða til í WS tengingu fyrir admin
+* Tengjast WS fyrir client
+  * `wss://vef2-2022-h1-synilausn.herokuapp.com/orders/<ORDER UID>`
+* Breyta stöðu á pöntun sem admin
+  * `POST https://vef2-2022-h1-synilausn.herokuapp.com/orders/<ORDER UID>`
+  * `{ "status": "PREPARE" }`
+* Sjá nýja stöðu koma inn á pöntunar WS
 
 ## Hópavinna
 
@@ -261,10 +287,11 @@ Skil skulu innihalda:
 
 ---
 
-> Útgáfa 0.2
+> Útgáfa 0.4
 
 | Útgáfa | Breyting                                                                                         |
 |--------|--------------------------------------------------------------------------------------------------|
 | 0.1    | Fyrsta útgáfa                                                                                    |
 | 0.2    | Skilgreining á vefþjónustum, mat, um tæki og tól, ekki krafa um tengitöflu fyrir flokka og vörur |
 | 0.3    | Bæta við `POST` `/cart` og `POST` `/orders/:id/status`                                           |
+| 0.4    | Bæta við um sýnilausn                                                                            |
